@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['user_name'] = $name;
-            header("Location: index.php");
+            header("Location: profile.php");
         } else {
             echo "Mot de passe incorrect.";
         }

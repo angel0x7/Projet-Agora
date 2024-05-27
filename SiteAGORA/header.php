@@ -23,7 +23,7 @@
             </li>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="account.php">Votre Compte</a>
+                    <a class="nav-link" href="profile.php">Votre Compte</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Déconnexion</a>
@@ -39,3 +39,4 @@
         </ul>
     </div>
 </nav>
+
