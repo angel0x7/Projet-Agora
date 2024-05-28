@@ -25,7 +25,7 @@
         <h2>Vos produits en vente</h2>
 
         <!-- Affichage des produits en vente -->
-        <div id="productsContainer">
+        <div id="productsContainer" style="display: flex; flex-wrap: wrap;">
             <!-- Les produits seront affichés ici -->
         </div>
 
