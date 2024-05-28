@@ -1,3 +1,9 @@
+
+<?php
+    session_start();
+    $user_id = $_SESSION['user_id'];
+?>
+
 <!-- templates/header.php -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.php">Agora Francia</a>
