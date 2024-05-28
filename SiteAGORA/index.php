@@ -67,7 +67,7 @@
        .section1 {
     flex-grow: 1;
     padding: 0;
-    background-image: url('photopersonne.png');
+    background-image: url('img/photopersonne.png');
     background-size: contain; /* ou auto, ou 50% selon le besoin */
     background-repeat: no-repeat;
     background-position: center;
@@ -122,7 +122,7 @@
 <body>
     <!-- En-tête avec barre de navigation -->
     <header>
-        <img src="agoralogo.png" alt="Logo Agora" class="logo">
+        <img src="img/agoralogo.png" alt="Logo Agora" class="logo">
 		
     </header>
 	
