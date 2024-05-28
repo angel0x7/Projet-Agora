@@ -24,6 +24,13 @@ while ($row = $result->fetch_assoc()) {
     echo "<p>Description : " . htmlspecialchars($row['description']) . "</p>";
     echo "<p>Prix : " . htmlspecialchars($row['price']) . "€" . "</p>";
     echo "<p>Catégorie : " . htmlspecialchars($row['category']) . "</p>";
+    // Afficher l'image du produit
+    if (!empty($row['image_path'])) {
+        echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Image du produit" style="width:200px;height:auto;">';
+    } else {
+        echo '<p>Aucune image disponible.</p>';
+    }
+
     echo "</div>";
 }
 
