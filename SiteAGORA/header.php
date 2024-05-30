@@ -21,7 +21,7 @@
 
         header {
             background-color: #5CB8FF;
-            padding: 20px;
+            padding: 0px 20px 0px 20px;
             text-align: center;
             border-radius: 20px;
         }
