@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {
     if ($stmt->execute()) {
         header("Location: account.php");
     } else {
-        echo "Erreur lors de la mise à jour du compte.";
+        echo "Erreur lors de la mise à jour du compte. Votre compte n'a pas été trouvé.";
     }
     $stmt->close();
     $conn->close();
