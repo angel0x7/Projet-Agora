@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {// Vé
     $notifications = $_POST['notifications'];
     $security = password_hash($_POST['security'], PASSWORD_DEFAULT);
     $user_id = $_SESSION['user_id'];
-
+// Prépare une déclaration SQL pour mettre à jour les informations de l'utilisateur
     $stmt = $conn->prepare("UPDATE users SET notifications = ?, password = ? WHERE id = ?");
     $stmt->bind_param("ssi", $notifications, $security, $user_id);
 
