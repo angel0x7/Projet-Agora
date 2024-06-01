@@ -2,7 +2,7 @@
 session_start();
 include 'db_connection.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {// Vérifie si la requête est de type POST et si l'utilisateur est connecté
     $notifications = $_POST['notifications'];
     $security = password_hash($_POST['security'], PASSWORD_DEFAULT);
     $user_id = $_SESSION['user_id'];
