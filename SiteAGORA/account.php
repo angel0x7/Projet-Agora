@@ -20,7 +20,7 @@
 
     <div class="container mt-5">
         <h2>Gestion du Compte</h2>
-        <form action="account_update.php" method="POST">
+        <form action="account_update.php" method="POST"><!-- Formulaire pour mettre à jour les informations du compte -->
             <div class="form-group">
                 <label for="notifications">Préférences de notification</label>
                 <select class="form-control" id="notifications" name="notifications">
