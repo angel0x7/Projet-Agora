@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {// Vé
     $stmt->bind_param("ssi", $notifications, $security, $user_id);
 
     if ($stmt->execute()) {
-        header("Location: account.php");
+        header("Location: account.php");// Redirige vers la page de compte si la mise à jour a réussi
     } else {
         echo "Erreur lors de la mise à jour du compte. Votre compte n'a pas été trouvé.";
     }
