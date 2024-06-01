@@ -10,7 +10,7 @@
 <body>
     <?php
     session_start();// Démarre la session PHP
-    if (!isset($_SESSION['user_id'])) {
+    if (!isset($_SESSION['user_id'])) {// Vérifie si l'utilisateur est connecté
         header("Location: login.php");
         exit();
     }
