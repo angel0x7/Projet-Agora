@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {// Vé
         echo "Erreur lors de la mise à jour du compte. Votre compte n'a pas été trouvé.";
     }
     $stmt->close();// Ferme la déclaration préparée
-    $conn->close();
+    $conn->close();// Ferme la connexion à la base de données
 }
 ?>
