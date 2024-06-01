@@ -3,7 +3,7 @@ session_start();
 include 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {// Vérifie si la requête est de type POST et si l'utilisateur est connecté
-    $notifications = $_POST['notifications'];
+    $notifications = $_POST['notifications'];// Récupère la préférence de notification depuis le formulaire
     $security = password_hash($_POST['security'], PASSWORD_DEFAULT);
     $user_id = $_SESSION['user_id'];// Récupère l'identifiant de l'utilisateur à partir de la session
 // Prépare une déclaration SQL pour mettre à jour les informations de l'utilisateur
