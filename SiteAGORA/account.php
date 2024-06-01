@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    session_start();
+    session_start();// Démarre la session PHP
     if (!isset($_SESSION['user_id'])) {
         header("Location: login.php");
         exit();
