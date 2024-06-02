@@ -343,13 +343,13 @@
     </section>
 	
     <section class="section3">
-	<a href="page1.php" class="btn-1">Vétements</a>
+	<a href="browse.php" class="btn-1">Vétements</a>
    
-    <a href="page2.php" class="btn-2">Mobilié</a><br>
+    <a href="browse.php" class="btn-2">Mobilié</a><br>
     
-    <br><a href="page3.php" class="btn-3">Bijoux</a>
+    <br><a href="browse.php" class="btn-3">Bijoux</a>
    
-    <a href="page4.php" class="btn-4">Electronique</a>
+    <a href="browse.php" class="btn-4">Electronique</a>
     
 	</section>
     <!-- Carrousel de sélection du jour et ventes flash -->
