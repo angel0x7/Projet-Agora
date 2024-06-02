@@ -328,13 +328,38 @@
     <header>
         <img src="agoralogo.png" alt="Logo Agora" class="logo">
     </header>
-    <nav>
+ <nav>
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="browse.php">Tout Parcourir</a></li>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="cart.php">Panier</a></li>
-            <li><a href="account.php">Votre Compte</a></li>
+            <li>
+                <a href="index.php">Accueil</a>
+            </li>
+            <li>
+                <a href="browse.php">Tout Parcourir</a>
+            </li>
+            <li>
+                <a href="notifications.php">Notifications</a>
+            </li>
+            <li>
+                <a href="cart.php" style="display: ruby-text;">
+                    <img src="panier.png" alt="Panier" class="panier-icon">
+                    <p class="nav-text">Panier</p>
+                </a>
+            </li>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <li>
+                    <a href="profile.php">Votre Compte</a>
+                </li>
+                <li>
+                    <a href="logout.php">Déconnexion</a>
+                </li>
+            <?php else: ?>
+                <li>
+                    <a href="login.php">Se Connecter</a>
+                </li>
+                <li>
+                    <a href="signup.php">S'inscrire</a>
+                </li>
+            <?php endif; ?>
         </ul>
     </nav>
     <!-- Section avec image de fond -->
