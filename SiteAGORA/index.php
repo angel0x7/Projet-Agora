@@ -165,6 +165,12 @@
     display: flex;
     justify-content: center;
 }
+.rectangle img {
+    width: 100%; /* Largeur à 100% pour remplir l'espace disponible */
+    height: auto; /* Hauteur automatique pour maintenir le ratio d'aspect */
+    object-fit: cover; /* S'assure que l'image est correctement ajustée à la taille spécifiée */
+    border-radius: 10px 10px 0 0; /* Si nécessaire */
+}
 
 .carousel {
     width: 80%; /* ajustez la largeur selon vos besoins */
@@ -352,117 +358,104 @@
         	
         <div class="container">
             <div class="row">
-                <div class="col-md-3"><br>
-                    <div class="rectangle">
-                        <h2>High-Tech</h2>
-                        <img src="image1.jpg" alt="Image 1">
-                        <p>Les meilleurs produits high-tech</p>
-                        <a href="high-tech.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-3"><br>
-                    <div class="rectangle">
-                        <h2>Cuisine et maison </h2>
-                        <img src="image2.jpg" alt="Image 2">
-                        <p>Découvrez nos meilleures ventes en cuisine et maison</p>
-                        <a href="cuisine-maison.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-3"><br>
-                    <div class="rectangle">
-                        <h2>Meilleures ventes dans cette catégorie</h2>
-                        <img src="image3.jpg" alt="Image 3">
-                        <p>Les produits les plus populaires de la semaine</p>
-                        <a href="meilleures-ventes.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-3"><br>
-                    <div class="rectangle">
-                        <h2>Jardin</h2>
-                        <img src="image4.jpg" alt="Image 4">
-                        <p>Tout pour votre jardin et vos plantes</p>
-                        <a href="jardin.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="rectangle">
-                        <h2>Les plus demandés dans Jeux vidéo</h2>
-                        <img src="image5.jpg" alt="Image 5">
-                        <p>Les jeux vidéo les plus populaires du moment</p>
-                        <a href="jeux-video.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="rectangle">
-                        <h2>Appareils électroménagers</h2>
-                        <img src="image6.jpg" alt="Image 6">
-                        <p>Tout pour votre cuisine et votre maison</p>
-                        <a href="appareils-electromenagers.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="rectangle">
-                        <h2>Téléphones portables</h2>
-                        <img src="image7.jpg" alt="Image 7">
-                        <p>Téléphones portables reconditionnés à petits prix</p>
-                        <a href="telephones-portables.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="rectangle">
-                        <h2>Nouveaux produits tendance</h2>
-                        <img src="image8.jpg" alt="Image 8">
-                        <p>Découvrez les nouveaux produits tendance</p>
-                        <a href="nouveaux-produits.php" class="button">Voir plus</a>
-                    </div>
-                </div>
-            </div>
+                <?php
+            // Connexion à la base de données
+            include 'db_connection.php';
+
+            // Requête pour obtenir les données des articles
+            $sql = "SELECT id FROM product_images";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Afficher les données de chaque ligne
+                while ($row = $result->fetch_assoc()) {
+                    $itemId = $row['id'];
+
+                    echo '<div class="col-md-3">';
+                    echo '<div class="rectangle">';
+
+                    // Requête préparée pour obtenir les images de l'article
+                    $stmt_images = $conn->prepare("SELECT image_path FROM product_images WHERE id = ?");
+                    $stmt_images->bind_param("i", $itemId);
+                    $stmt_images->execute();
+                    $images_result = $stmt_images->get_result();
+
+                    if ($images_result->num_rows > 0) {
+                        $image_row = $images_result->fetch_assoc();
+                        echo '<img src="' . htmlspecialchars($image_row['image_path']) . '" alt="Image de l\'article">';
+                    }
+
+                    $stmt_images->close(); // Fermer la requête
+
+                    echo '<button class="btn btn-primary">Voir plus</button>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo "0 results";
+            }
+            $conn->close();
+            ?>
+
         </div>
     </section>
     <section class="section4">
 	<h2>Sélection du jour</h2>
 	<div id="carouselExampleIndicators" class="carousel slide container-carousel" data-ride="carousel">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="image1.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First Slide</h5>
-                        <p>First slide description.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="image2.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second Slide</h5>
-                        <p>Second slide description.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="image3.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third Slide</h5>
-                        <p>Third slide description.</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-		</div>
+    <div class="carousel-inner">
+        <?php
+            // Connexion à la base de données
+            include 'db_connection.php';
+
+            // Requête pour obtenir les données des articles
+            $sql = "SELECT id FROM product_images";
+            $result = $conn->query($sql);
+
+            $firstImage = true;
+
+            if ($result->num_rows > 0) {
+                // Afficher les données de chaque ligne
+                while ($row = $result->fetch_assoc()) {
+                    $itemId = $row['id'];
+
+                    echo '<div class="carousel-item' . ($firstImage ? ' active' : '') . '">';
+                    echo '<div class="col-md-3">';
+                    echo '<div class="rectangle">';
+
+                    // Requête préparée pour obtenir les images de l'article
+                    $stmt_images = $conn->prepare("SELECT image_path FROM product_images WHERE id = ?");
+                    $stmt_images->bind_param("i", $itemId);
+                    $stmt_images->execute();
+                    $images_result = $stmt_images->get_result();
+
+                    if ($images_result->num_rows > 0) {
+                        $image_row = $images_result->fetch_assoc();
+                        echo '<img src="' . htmlspecialchars($image_row['image_path']) . '" alt="Image de l\'article" style="width: 400%; height: 100% ;">';
+                    }
+
+                    $stmt_images->close(); // Fermer la requête
+
+                    echo '<button class="btn btn-primary">Voir plus</button>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    $firstImage = false;
+                }
+            } else {
+                echo "0 results";
+            }
+            $conn->close();
+        ?>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
     </section>
     <div class="chatbot">
         <header>
