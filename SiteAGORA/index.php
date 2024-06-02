@@ -638,8 +638,9 @@
             <div id="map" style="height: 400px;"></div>
         </section>
         <p>&copy; 2023 Agora Francia</p>
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique de confidentialité</a>
+        <a  href="faq.php">FAQ</a>
+    <a  href="privacy_policy.php">Politique de Confidentialité</a>
+    <a  href="terms.php">Conditions Générales d'Utilisation</a>
     </footer>
     <!-- Fin du code HTML -->
 
