@@ -356,13 +356,13 @@
                     <div class="rectangle">
                         <h2>High-Tech</h2>
                         <img src="image1.jpg" alt="Image 1">
-                        <p>Les meilleurs produits high-tech à petits prix</p>
+                        <p>Les meilleurs produits high-tech</p>
                         <a href="high-tech.php" class="button">Voir plus</a>
                     </div>
                 </div>
                 <div class="col-md-3"><br>
                     <div class="rectangle">
-                        <h2>Cuisine et maison : pépites à moins de 20€</h2>
+                        <h2>Cuisine et maison </h2>
                         <img src="image2.jpg" alt="Image 2">
                         <p>Découvrez nos meilleures ventes en cuisine et maison</p>
                         <a href="cuisine-maison.php" class="button">Voir plus</a>
@@ -404,7 +404,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="rectangle">
-                        <h2>Téléphones portables reconditionnés</h2>
+                        <h2>Téléphones portables</h2>
                         <img src="image7.jpg" alt="Image 7">
                         <p>Téléphones portables reconditionnés à petits prix</p>
                         <a href="telephones-portables.php" class="button">Voir plus</a>
