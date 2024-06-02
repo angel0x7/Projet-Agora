@@ -212,6 +212,7 @@
         .rectangle h2 {
             font-weight: bold;
             margin-top: 0;
+	    color:black;
         }
         .rectangle img {
             width: 100%;
@@ -221,6 +222,7 @@
         }
         .rectangle p {
             margin-bottom: 20px;
+	    color:black;
         }
         .button {
             background-color: #5CB8FF;
