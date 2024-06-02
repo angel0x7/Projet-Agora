@@ -321,6 +321,15 @@
         .btn-4:hover {
             background-color: #93c5cf;
         }
+       .panier-icon {
+            width: 20px; /* Ajustez la taille de l'icône selon vos préférences */
+            height: auto;
+            margin-right: 5px; /* Ajoutez une marge à droite pour l'espace entre l'icône et le texte */
+        }
+
+        .nav-text {
+            margin: 0; /* Supprimez les marges autour du texte pour un alignement propre */
+        }
     </style>
 </head>
 <body>
