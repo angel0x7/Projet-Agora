@@ -49,11 +49,13 @@ if (isset($_GET['id'])) {
     <!DOCTYPE html>
     <html lang="fr">
     <head>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Négociation</title>
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
     </head>
     <body>
         <?php include 'header.php'; ?>
@@ -96,7 +98,8 @@ if (isset($_GET['id'])) {
                             echo '<span class="sr-only">Next</span>';
                             echo '</a>';
                             echo '</div>';
-                        } else {
+                        }
+                        else {
                             // Afficher l'image unique du produit
                             if ($images_result->num_rows === 1) {
                                 $image_row = $images_result->fetch_assoc();
