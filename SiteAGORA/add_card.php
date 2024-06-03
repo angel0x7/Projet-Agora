@@ -210,9 +210,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-
-            // Valider une nouvelle carte
+        $(document).ready(function() {// Valider une nouvelle carte
+            
             $(document).on("click", ".validate-new-card", function() {
                 var cardContainer = $(this).closest(".new-card-container");
                 var cardType = cardContainer.find("[name='card_type[]']").val();
@@ -230,8 +229,7 @@
                         expiry_date: expiryDate,
                         security_code: securityCode
                     },
-                    success: function(response) {
-                        // Gérer la réponse du serveur ici
+                    success: function(response) {// Gérer la réponse du serveur ici
                         window.location.href = 'manege_card.php';
                     },
                     error: function() {
