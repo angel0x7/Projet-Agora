@@ -38,12 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['negotiation_id'])) {
     $stmt = $conn->prepare("UPDATE negotiations SET status = 'accepted', updated_at = NOW() WHERE id = ?");
     $stmt->bind_param("i", $negotiationId);
     if ($stmt->execute()) {
+        
         // Ajouter le produit au panier de l'acheteur avec le prix final de la négociation
         $stmt = $conn->prepare("INSERT INTO cart (user_id, product_id, price) VALUES (?, ?, ?)");
         $stmt->bind_param("iid", $row['buyer_id'], $productId, $finalOffer);
         $stmt->execute();
 
         echo "Offre acceptée avec succès.";
+        
         // Rediriger vers la page du panier
         header("Location: cart.php");
         exit();
