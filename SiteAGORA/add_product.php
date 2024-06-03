@@ -62,8 +62,8 @@ if ($stmt->execute()) {
         }
 
         // Déplacer le fichier téléchargé vers le répertoire des images
-        if (move_uploaded_file($imageTmpName, $targetFile)) {
-            // Insérer l'image dans la base de données
+        if (move_uploaded_file($imageTmpName, $targetFile)) {// Insérer l'image dans la base de données
+                                                             
             $imageStmt = $conn->prepare("INSERT INTO product_images (product_id, image_path) VALUES (?, ?)");
             $imageStmt->bind_param("is", $productId, $targetFile);
             $imageStmt->execute();
@@ -83,8 +83,10 @@ if ($stmt->execute()) {
 
     // Parcourir chaque critère de recherche
     while ($row = $result->fetch_assoc()) {
-        // Vérifier si le nouvel article correspond aux critères de recherche
+        
+        // Vérifier si le nouvel article correspond aux critères de recherche                                   
         if ($categorySell == $row['categorie_sell'] && $productCategory == $row['categorie'] && $productPrice <= $row['prix_max']) {
+            
             // Enregistrer une notification pour l'utilisateur correspondant
             $user_id = $row['user_id'];
             $message = "Nouvel article disponible : " . $productName;
@@ -97,10 +99,12 @@ if ($stmt->execute()) {
     }
 
     if ($uploadSuccess) {
+        
         // Rediriger vers une page de confirmation ou de retour
         header("Location: my_product.php");
         exit();
     } else {
+        
         // Supprimer le produit si une erreur s'est produite lors du téléchargement des images
         $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
         $stmt->bind_param("i", $productId);
