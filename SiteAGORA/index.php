@@ -345,6 +345,11 @@
                 max-width: 1220px;
             }
         }
+	    iframe{
+    width: 80%;
+    height: 500px;
+    filter: invert(100%);
+}
     </style>
 </head>
 <body>
@@ -538,30 +543,23 @@
             <p>Adresse : 123 Rue de l'Exemple, Paris, France</p>
             <p>Email : contact@agorafrancia.com</p>
             <p>Téléphone : +33 1 23 45 67 89</p>
-            <div id="map" style="height: 400px;"></div>
-        </section>
+            
+        
+		
+    <!-- Script pour charger Google Maps API avec votre clé -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.0576872058036!2d90.
+        34664841536264!3d23.745322194886302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf950390da7b%3A0xde74ee6ce06f5fd6!2sWest%20dhanmondi%20residential%20a
+        rea%20%2C%20bosila%2C%20mohammadpur%20%2C%20Dhaka-%201207!5e0!3m2!1sen!2sbd!4v1651403536263!5m2!1sen!2sbd"
+         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <p>&copy; 2023 Agora Francia</p>
         <a  href="faq.php">FAQ</a>
         <a  href="privacy_policy.php">Politique de Confidentialité</a>
         <a  href="terms.php">Conditions Générales d'Utilisation</a>
+		</section>
     </footer>
     <!-- Fin du code HTML -->
 
-    <!-- Script pour initialiser la carte Google Maps -->
-    <script>
-        function initMap() {
-            var location = { lat: 48.8566, lng: 2.3522 }; // Coordonnées de Paris
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: location
-            });
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        }
-    </script>
-    <!-- Script pour charger Google Maps API avec votre clé -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    
+    
 </body>
 </html>
