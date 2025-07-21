@@ -1,3 +1,11 @@
+# Projet Java ING1 2023 : ECE World
+
+Liens Utiles :  [**Sujet**](sujet_ECE_WORLD.pdf)
+
+**Projet d'informatique en C du second semestre (ECE ING1)**
+
+# 🎢 ECE World – Projet Parc d'Attractions
+
 # 🛍️ Agora – Projet de Site Web Dynamique
 
 Ce dépôt contient le code source et la documentation du projet **Agora**, un site e-commerce développé dans le cadre du cours **Web Dynamique** à l’ECE Paris.
@@ -50,5 +58,5 @@ L’interface suit les standards modernes du web, avec une navigation claire et 
 - **Base de données** : MySQL  
 - **Versionnement** : Git
 
-## 📁 Structure du projet
+
 
