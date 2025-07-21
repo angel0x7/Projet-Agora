@@ -1,6 +1,6 @@
 # Projet Java ING2 2024 : Agora
 
-Liens Utiles :  [**Sujet**](Agora_web_site.pdf)
+Liens Utiles :  [**Présentation**](Agora_web_site.pdf)
 
 **Projet d'informatique du second semestre (ECE ING2)**
 
