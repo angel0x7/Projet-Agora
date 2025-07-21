@@ -1,10 +1,8 @@
-# Projet Java ING1 2023 : ECE World
+# Projet Java ING2 2024 : Agora
 
-Liens Utiles :  [**Sujet**](sujet_ECE_WORLD.pdf)
+Liens Utiles :  [**Sujet**](Agora_web_site.pdf)
 
-**Projet d'informatique en C du second semestre (ECE ING1)**
-
-# 🎢 ECE World – Projet Parc d'Attractions
+**Projet d'informatique du second semestre (ECE ING2)**
 
 # 🛍️ Agora – Projet de Site Web Dynamique
 
